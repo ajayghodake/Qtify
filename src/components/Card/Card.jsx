@@ -20,7 +20,7 @@ export default function ActionAreaCard() {
       } catch (err) {
         console.error("Error fetching API data", err);
       } finally {
-        // setLoading(false);
+        // setLoading(false);b  dfghdfh
       }
     }
     fetchData();
