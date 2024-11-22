@@ -20,7 +20,7 @@ export default function ActionAreaCard() {
       } catch (err) {
         console.error("Error fetching API data", err);
       } finally {
-        // setLoading(false);b  dfghdfh
+        // setLoading(false);
       }
     }
     fetchData();
@@ -40,12 +40,12 @@ export default function ActionAreaCard() {
   return (
     <div className="container">
       <div className="header">
-      <h3>Top Albums</h3>
-      <button className="toggle-button" onClick={toggleExpanded}>
-        {isExpanded ? "Collapse" : "Show More"}
-      </button>
+        <h3>Top Albums</h3>
+        <button className="toggle-button" onClick={toggleExpanded}>
+          {isExpanded ? "Collapse" : "Show More"}
+        </button>
       </div>
-     
+
       <div className={`wrapper ${isExpanded ? "grid-layout" : ""}`}>
         {isExpanded ? (
           // Grid layout when expanded
