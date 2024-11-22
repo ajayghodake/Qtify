@@ -1,0 +1,73 @@
+
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: white; /* Use green background */
+  border-radius: 8px;
+  border: 1px solid #121212; /* Black border to match image */
+  width: 100%;
+  margin-left: 30px;
+  max-width: 568px; /* Set a max width to limit the size */
+  height: 48px;
+}
+
+@media (max-width: 960px) { /* Tablet and below */
+  .search-container {
+    margin-left: 0;
+  }
+}
+
+.search-icon-wrapper {
+  width: 67px;
+  height: 48px;
+  /* border: 1px solid #121212; */
+  border-left: 1px solid #121212;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.search-icon-wrapper:active {
+  transform: scale(0.90); /* Shrink the button slightly on click */
+}
+
+.input-base {
+  color: inherit;
+  font-size: 16px;
+  padding-left: 0;
+  width: 100%;
+}
+
+
+.input-base .MuiInputBase-input {
+  padding: 10px 16px;
+}
+
+@media (max-width: 768px) { /* Tablet and below */
+  .search-container {
+    margin-left: 0;
+    height: 36px;
+    .search-icon-wrapper {
+      height: 36px;
+    }
+  }
+}
+
+@media (max-width: 600px) { /* Mobile */
+  .input-base .MuiInputBase-input {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 376px) { /* Mobile */
+  .search-icon-wrapper {
+    width: 50px;
+  }
+}

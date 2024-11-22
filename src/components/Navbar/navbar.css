@@ -1,0 +1,80 @@
+/* .navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--green-color);
+  height: 74px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.App-logo {
+  width: 67px;
+  height: 34px;
+  top: 20px;
+  left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  margin: 3px;
+  margin-left: 30px;
+  background-color: var(--green-color);
+} */
+/* Navbar.css */
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--green-color);
+  height: 74px;
+  padding: 0 20px;
+}
+
+.App-logo {
+  width: 67px;
+  height: 34px;
+  margin: 3px;
+  margin-left: 30px;
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  .App-logo {
+    /* margin-bottom: 10px; */
+    margin-left: 0px;
+  }
+  .navbar button {
+    width: auto;
+    height: auto;
+    margin: 4px;
+    padding: 0px 6px;
+    gap: 10px;
+    background-color: var(--black-color);
+    color: var(--green-color);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.25px;
+    text-align: center;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px;
+  }
+  
+  /* Adjust button and search bar for mobile */
+
+}

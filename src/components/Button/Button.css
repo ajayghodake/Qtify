@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.btn {
+    width: 170px; /* Corrected width */
+    height: 47px; /* Corrected height */
+    margin: 8px;
+    margin-right: 30px;
+    padding: 10px 16px; /* Simplified padding shorthand */
+    gap: 10px; /* Note: gap is used in flex or grid containers */
+    background-color: var(--black-color);
+    color: var(--green-color);
+    border: 1px solid transparent; /* Fixed border syntax */
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 27px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+.btn:active{
+    transform: scale(0.95);
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+
+
+
