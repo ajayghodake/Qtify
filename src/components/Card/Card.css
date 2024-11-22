@@ -35,6 +35,9 @@
   transition: transform 0.2s ease;
   width: 110px;
 }
+.toggle-button:hover{
+    cursor: pointer;
+}
 .wrapper {
   margin: 0px 10px;
 }
@@ -100,9 +103,6 @@
 }
 
 /* Custom styles for carousel arrows */
-.carousel-container {
-  height: 232px;
-}
 .carousel-container .react-multiple-carousel__arrow {
   background-color: var(--green-color); /* Background color of arrows */
   color: #ffffff; /* Arrow icon color */
@@ -119,9 +119,8 @@
 .carousel-container .react-multiple-carousel__arrow:hover {
   background-color: var(
     --lightGreen-color
-  ); /* Change background on hover *ss/
-    color: black; /* Change icon color on hover */
-  transform: scale(1.1); /* Slightly enlarge on hover */
+  ); 
+  transform: scale(1.1);
 }
 
 .react-multiple-carousel__arrow--left {
