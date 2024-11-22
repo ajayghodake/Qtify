@@ -3,19 +3,21 @@ import logo from "../../assets/qtifyLogo.svg";
 import "./navbar.css";
 import Btn from "../Button/Button";
 import SearchBar from "../Search/Search";
-import Hero from '../Hero/Hero';
-import ActionAreaCard from '../Card/Card'
+import Hero from "../Hero/Hero";
+import ActionAreaCard from "../Card/Card";
 
 function Navbar() {
   return (
     <>
       <div className="navbar">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="logo">
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
         <SearchBar />
         <Btn btnLable="Give Feedback" />
       </div>
       <div>
-        <Hero/>
+        <Hero />
       </div>
       <ActionAreaCard />
     </>

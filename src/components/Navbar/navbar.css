@@ -7,12 +7,15 @@
   height: 74px;
   padding: 0 20px;
 }
-
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
 .App-logo {
   width: 67px;
   height: 34px;
   margin: 3px;
-  margin-left: 30px;
   align-items: center;
 }
 
@@ -51,7 +54,6 @@
   .navbar {
     padding: 8px;
   }
-  
-  /* Adjust button and search bar for mobile */
 
+  /* Adjust button and search bar for mobile */
 }
