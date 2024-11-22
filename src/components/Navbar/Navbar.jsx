@@ -14,7 +14,7 @@ function Navbar() {
           <img src={logo} className="App-logo" alt="logo" />
         </div>
         <SearchBar />
-        <Btn btnLable="Give Feedback" />
+        <Btn className="navbar-btn" btnLable="Give Feedback" />
       </div>
       <div>
         <Hero />

@@ -19,6 +19,9 @@
   align-items: center;
 }
 
+.navbar-btn:hover{
+  cursor: pointer;
+}
 /* Tablet view */
 @media (max-width: 768px) {
   .navbar {
