@@ -1,7 +1,5 @@
 
-.main{
-    display: flex;
-}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -47,12 +45,12 @@
   justify-content: center;
   align-items: self-start;
 }
+
 .wrapper.grid-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 45px;
-  justify-content: flex-start; /* Center cards in the grid */
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 45px
+  }
 
 .card-container:hover {
   cursor: pointer;
@@ -174,7 +172,7 @@
   .wrapper.grid-layout {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    /* gap: 25px; */
     justify-content: center;
   }
 }
