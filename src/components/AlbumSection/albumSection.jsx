@@ -39,7 +39,7 @@ export default function AlbumSection({endpoint, title}) {
       <div className="header">
         <h3>{title}</h3>
         <button className="toggle-button" onClick={toggleExpanded}>
-          {isExpanded ? "Collapse" : "Show All"}
+          {isExpanded ? "Collapse" : "Show all"}
         </button>
       </div>
 
