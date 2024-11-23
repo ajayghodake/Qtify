@@ -4,6 +4,8 @@ import Hero from "./components/Hero/Hero";
 // import TopAlbum from "./components/TopAlbum/topAlbum";
 // import NewAlbum from "./components/NewAlbum/newAlbum";
 import AlbumSection from "./components/AlbumSection/albumSection";
+
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,7 @@ function App() {
       <div className="component-wrapper">
       <AlbumSection endpoint={"new"} title={"New Albums"} />
       </div>
+      
     </div>
   );
 }

@@ -100,3 +100,72 @@ export default function AlbumSection({endpoint, title}) {
 }
 
 
+
+
+// // USING carousel.js component (swiper.js)
+
+// import React, { useEffect, useState } from "react";
+// import Api from "../../api/api.js";
+// import AreaCard from "../Card/Card.jsx" // Import your new Carousel component
+// import "react-multi-carousel/lib/styles.css";
+// import SpringSlider from "../Carousel/carousel.jsx";
+
+// export default function AlbumSection({ endpoint, title }) {
+//   const [apiData, setApiData] = useState([]);
+//   const [isExpanded, setIsExpanded] = useState(false);
+//   const [loading, setLoading] = useState(false);
+
+//   useEffect(() => {
+//     async function fetchData() {
+//       setLoading(true);
+//       try {
+//         const res = await Api(endpoint);
+//         setApiData(res);
+//       } catch (err) {
+//         console.error("Error fetching API data", err);
+//       } finally {
+//         setLoading(false);
+//       }
+//     }
+//     fetchData();
+//   }, [endpoint]);
+
+//   const toggleExpanded = () => {
+//     setIsExpanded(!isExpanded);
+//   };
+
+//   return (
+//     <div className="container">
+//       <div className="header">
+//         <h3>{title}</h3>
+//         <button className="toggle-button" onClick={toggleExpanded}>
+//           {isExpanded ? "Collapse" : "Show More"}
+//         </button>
+//       </div>
+
+//       {loading ? (
+//         <div className="loading">Loading...</div>
+//       ) : apiData.length === 0 ? (
+//         <div className="noData">No Data Available</div>
+//       ) : isExpanded ? (
+//         <div className="wrapper grid-layout">
+//           {apiData?.map((album, index) => (
+//             <AreaCard
+//               key={album.id || index}
+//               id={album.id}
+//               image={album.image}
+//               title={album.title}
+//               follows={album.follows}
+//               slug={album.slug}
+//             />
+//           ))}
+//         </div>
+//       ) : (
+//         <div id="carousel-layout">
+//           <SpringSlider data={apiData} />
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
