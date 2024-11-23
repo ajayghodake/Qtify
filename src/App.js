@@ -1,8 +1,8 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import TopAlbum from "./components/TopAlbum/topAlbum";
-import NewAlbum from "./components/NewAlbum/newAlbum";
+// import TopAlbum from "./components/TopAlbum/topAlbum";
+// import NewAlbum from "./components/NewAlbum/newAlbum";
 import AlbumSection from "./components/AlbumSection/albumSection";
 function App() {
   return (
