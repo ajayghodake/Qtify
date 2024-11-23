@@ -53,10 +53,10 @@ export default function ActionAreaCard() {
             <div className="main">
             <div key={album.id || index} className="card-container">
               <div className="card-box">
-                <img src={album.image} alt={album.title} />
-                <Chip id="chip" label={`${album.follows} follows`} />
+                <img src={album.image} alt={album.title || "album"} />
+                <Chip id="chip" label={`${album.follows || 0} follows`} />
               </div>
-              <div id="slug">{album.slug}</div>
+              <div id="slug">{album.slug || "unknown"}</div>
             </div>
             </div>
           ))
@@ -73,10 +73,10 @@ export default function ActionAreaCard() {
             {apiData?.map((album, index) => (
               <div key={album.id || index} className="card-container">
                 <div className="card-box">
-                  <img src={album.image} alt={album.title} />
-                  <Chip id="chip" label={`${album.follows} follows`} />
+                  <img src={album.image} alt={album.title || "album"} />
+                  <Chip id="chip" label={`${album.follows || 0} follows`} />
                 </div>
-                <div id="slug">{album.slug}</div>
+                <div id="slug">{album.slug || "unknown"}</div>
               </div>
             ))}
           </Carousel>
