@@ -5,7 +5,7 @@ import AreaCard from "../Card/Card.jsx";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import './topAlbum.css'
-import axios from "axios";
+// import axios from "axios";
 
 export default function AlbumSection({endpoint, title}) {
   const [apiData, setApiData] = useState([]);
@@ -28,7 +28,7 @@ export default function AlbumSection({endpoint, title}) {
       }
     }
     fetchData();
-  }, []);
+  }, [endpoint]);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
