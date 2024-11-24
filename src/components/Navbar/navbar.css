@@ -5,7 +5,7 @@
   align-items: center;
   background-color: var(--green-color);
   height: 74px;
-  padding: 0 20px;
+  padding: .62rem 1rem;
 }
 .logo {
   display: flex;

@@ -4,6 +4,7 @@ import Api from "../../api/api.js";
 import AreaCard from "../Card/Card.jsx";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import './albumSection.css';
 // import './topAlbum.css'
 // import axios from "axios";
 
@@ -30,6 +31,8 @@ export default function AlbumSection({endpoint, title}) {
     fetchData();
   }, [endpoint]);
 
+  console.log("Data Lenght", apiData.length);
+
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
   };
@@ -52,7 +55,7 @@ export default function AlbumSection({endpoint, title}) {
           <div className="wrapper grid-layout">
             {apiData?.map((album, index) => (
               <AreaCard
-                key={album.id || index} // Unique key
+                key={album.id || index}
                 id={album.id}
                 image={album.image}
                 title={album.title}
@@ -69,7 +72,7 @@ export default function AlbumSection({endpoint, title}) {
                   breakpoint: { max: 4000, min: 3000 },
                   items: 10,
                 },
-                desktop: { breakpoint: { max: 3000, min: 1024 }, items: 6 },
+                desktop: { breakpoint: { max: 3000, min: 1024 }, items: 7 },
                 tablet: { breakpoint: { max: 1024, min: 464 }, items: 4 },
                 mobile: { breakpoint: { max: 464, min: 0 }, items: 2 },
               }}
@@ -83,12 +86,13 @@ export default function AlbumSection({endpoint, title}) {
             >
               {apiData?.map((album, index) => (
                 <AreaCard
-                  key={album.id || index} // Unique key
+                  key={album.id || index} 
                   id={album.id}
                   image={album.image}
                   title={album.title}
                   follows={album.follows}
                   slug={album.slug}
+                  link={`/album/${album.slug}`}
                 />
               ))}
             </Carousel>

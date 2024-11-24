@@ -10,7 +10,6 @@
   font-weight: 600;
 }
 
-/* Set font for the entire app */
 * {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
@@ -24,4 +23,6 @@ body {
 
 .component-wrapper {
   margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--green-color);
 }
