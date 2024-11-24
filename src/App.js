@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero";
 // import TopAlbum from "./components/TopAlbum/topAlbum";
 // import NewAlbum from "./components/NewAlbum/newAlbum";
 import AlbumSection from "./components/AlbumSection/albumSection";
+import LabTabs from "./components/Tabs/tab"
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
       <div className="component-wrapper">
       <AlbumSection endpoint={"new"} title={"New Albums"} />
       </div>
-      
+      <div className="partition"></div>
+      <LabTabs />
     </div>
   );
 }
