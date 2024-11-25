@@ -4,6 +4,7 @@ import Api from "../../api/api.js";
 import AreaCard from "../Card/Card.jsx";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { CircularProgress } from '@mui/material';
 import './albumSection.css';
 // import './topAlbum.css'
 // import axios from "axios";
@@ -48,7 +49,7 @@ export default function AlbumSection({endpoint, title}) {
 
     
         {loading ? (
-          <div className="loading">Loading...</div>
+          <CircularProgress />
         ) : apiData.length === 0 ? (
           <div className="noData">No Data Available</div>
         ) : isExpanded ? (
