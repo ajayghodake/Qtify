@@ -5,7 +5,7 @@ import AreaCard from "../Card/Card.jsx";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CircularProgress } from '@mui/material';
-import './albumSection.css';
+import './Section.css';
 import noDataImage from "./nodata.png";
 // import './topAlbum.css'
 // import axios from "axios";

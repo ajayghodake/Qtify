@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 // import TopAlbum from "./components/TopAlbum/topAlbum";
 // import NewAlbum from "./components/NewAlbum/newAlbum";
-import Section from "./components/Section/albumSection";
+import Section from "./components/Section/Section";
 import LabTabs from "./components/Tabs/tab"
 
 

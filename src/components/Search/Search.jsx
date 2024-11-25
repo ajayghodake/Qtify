@@ -8,8 +8,10 @@ function SearchBar() {
       <InputBase
         className="input-base"
         placeholder="Search an album of your choice"
-        inputProps={{ 'aria-label': 'search', style: { color: 'rgba(18, 18, 18, 0.7)' } }}
-        
+        inputProps={{
+          'aria-label': 'search',
+          style: { fontFamily: 'Poppins, sans-serif', fontSize: '14px', color: 'rgba(0, 0, 0, 0.7)' },
+        }}
       />
       <div className="search-icon-wrapper">
         <SearchIcon />
