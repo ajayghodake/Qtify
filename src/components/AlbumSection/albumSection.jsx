@@ -65,7 +65,7 @@ export default function AlbumSection({endpoint, title}) {
             ))}
           </div>
         ) : (
-          <div id="carousel-layout">
+    
             <Carousel
               responsive={{
                 superLargeDesktop: {
@@ -83,6 +83,9 @@ export default function AlbumSection({endpoint, title}) {
               itemClass="carousel-item-padding"
               renderButtonGroupOutside={false}
               arrows={true}
+              style={{
+                transform: "translate3d(33px, 0px, 0px)",
+              }}
             >
               {apiData?.map((album, index) => (
                 <AreaCard
@@ -96,7 +99,7 @@ export default function AlbumSection({endpoint, title}) {
                 />
               ))}
             </Carousel>
-          </div>
+   
         )}
       </div>
    

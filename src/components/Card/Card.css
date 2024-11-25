@@ -198,6 +198,9 @@
 
 
 /*------------------------------ Custom styles for carousel arrows ----------------------------*/
+.react-multi-carousel-list carousel-container{
+  transform: translate3d(10px, 0px, 0px);
+}
 .carousel-container .react-multiple-carousel__arrow {
   background-color: var(--green-color); /* Background color of arrows */
   color: #ffffff; /* Arrow icon color */

@@ -1,3 +1,6 @@
-#carousel-layout {
+/* #carousel-layout {
     transform: translate3d(10px, 0px, 0px);
+  } */
+  .carousel-item-padding {
+    transform: translate3d(20px, 0px, 0px);
   }
