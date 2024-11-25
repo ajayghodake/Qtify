@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 // import TopAlbum from "./components/TopAlbum/topAlbum";
 // import NewAlbum from "./components/NewAlbum/newAlbum";
-import AlbumSection from "./components/AlbumSection/albumSection";
+import Section from "./components/Section/albumSection";
 import LabTabs from "./components/Tabs/tab"
 
 
@@ -13,10 +13,10 @@ function App() {
       <Navbar />
       <Hero />
       <div className="component-wrapper">
-      <AlbumSection endpoint={"top"} title={"Top Albums"} />
+      <Section endpoint={"top"} title={"Top Albums"} />
       </div>
       <div className="component-wrapper">
-      <AlbumSection endpoint={"new"} title={"New Albums"} />
+      <Section endpoint={"new"} title={"New Albums"} />
       </div>
       <LabTabs />
     </div>
