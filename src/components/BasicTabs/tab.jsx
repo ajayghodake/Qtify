@@ -41,3 +41,4 @@ export default function LabTabs() {
     </div>
   );
 }
+
