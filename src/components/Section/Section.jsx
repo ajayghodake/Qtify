@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 // import Api from "../../api/api.js";
 import AreaCard from "../Card/Card.jsx";
+// import AreaCarousel from "../Carousel/carousel.jsx";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CircularProgress } from '@mui/material';
@@ -11,13 +12,12 @@ import noDataImage from "./nodata.png";
 // import axios from "axios";
 
 export default function Section({type, title, data, toggle = true}) {
-  // const [apiData, setApiData] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(false);
 
  
 
-  // console.log("Data Lenght", data.length);
+  console.log("Data Lenght", data.length);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -55,6 +55,7 @@ export default function Section({type, title, data, toggle = true}) {
           </div>
         ) : (
     
+            // <AreaCarousel data={data} type={type} renderCards={(data)=><AreaCard data={data} type={type}/>}/>
             <Carousel
               responsive={{
                 superLargeDesktop: {
@@ -84,11 +85,10 @@ export default function Section({type, title, data, toggle = true}) {
                 />
               ))}
             </Carousel>
-   
+
         )}
       </div>
    
   );
 }
-
 

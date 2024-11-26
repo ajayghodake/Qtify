@@ -1,47 +1,42 @@
-// import React from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation } from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "./carousel.css";
-// import Chip from "@mui/material/Chip";
-// import '../Card/Card.css'
+// import * as React from "react";
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
+// import AreaCard from "../Card/Card.jsx";
 
-// export default function SpringSlider({ data }) {
+// const AreaCarousel = ({ data, renderCards, type }) => {
+//   const responsive = {
+//     superLargeDesktop: {
+//       breakpoint: { max: 4000, min: 3000 },
+//       items: 10,
+//     },
+//     desktop: { breakpoint: { max: 3000, min: 1024 }, items: 7 },
+//     tablet: { breakpoint: { max: 1024, min: 464 }, items: 4 },
+//     mobile: { breakpoint: { max: 464, min: 0 }, items: 2 },
+//   };
+
 //   return (
-//     <Swiper
-//       modules={[Navigation]}
-//       spaceBetween={20}
-//       slidesPerView={4}
-//       navigation={{
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//       }}
-//       loop={false}
-//       breakpoints={{
-//         320: { slidesPerView: 2 }, // Mobile
-//         768: { slidesPerView: 3 }, // Tablet
-//         1024: { slidesPerView: 6 }, // Desktop
-//       }}
-//     >
-//       {data.map((item, index) => (
-//         <SwiperSlide key={index} className="swiper-slide">
-//           <div className="main">
-//             <div className="container">
-//               <div key={item.id} className="card-container">
-//                 <div className="card-box">
-//                   <img src={item.image} alt={item.title || "Album"} />
-//                   <Chip id="chip" label={`${item.follows} follows`} />
-//                 </div>
-//                 <div id="slug">{item.slug || "Unknown"}</div>
-//               </div>
-//             </div>
-//           </div>
-//         </SwiperSlide>
-//       ))}
-//       {/* Custom navigation buttons */}
-//       <button className="swiper-button-prev">&lt;</button>
-//       <button className="swiper-button-next">&gt;</button>
-//     </Swiper>
-//   );
-// }
+//     <Carousel
+//     responsive={responsive}
+//     showDots={false}
+//     customTransition="all 0.5s ease-in-out"
+//     infinite={false}
+//     containerClass="carousel-container"
+//     itemClass="carousel-item-padding"
+//     renderButtonGroupOutside={false}
+//     arrows={true}
+//     style={{
+//       transform: "translate3d(33px, 0px, 0px)",
+//     }}
+//   >
+//     {data?.map((album, index) => (
+//       <AreaCard
+//       data={album}
+//       type={type}
+//       key={album.id || index}
+//       />
+//     ))}
+//   </Carousel>
+//   )
+// };
+
+// export default AreaCarousel;
