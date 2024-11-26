@@ -1,12 +1,8 @@
 import "./App.css";
-
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from "./api/api";
-// import TopAlbum from "./components/TopAlbum/topAlbum";
-// import NewAlbum from "./components/NewAlbum/newAlbum";
 import Section from "./components/Section/Section";
-import LabTabs from "./components/BasicTabs/tab";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -44,11 +40,11 @@ function App() {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     generateTopAlbumSongs();
     generateNewAlbumSongs();
     generateSongs();
-  }, [])
+  }, []);
 
   return (
     <div className="App">
@@ -58,7 +54,7 @@ function App() {
         <Section type="album" title="Top Albums" data={topAlbumSongs} />
         <Section type="album" title="New Albums" data={newAlbuSongs} />
       </div>
-      <LabTabs />
+    
     </div>
   );
 }

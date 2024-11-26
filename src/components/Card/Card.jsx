@@ -5,34 +5,42 @@ import Tooltip from "@mui/material/Tooltip";
 import "./Card.css";
 
 export default function AreaCard({ data, type }) {
-  const { id, image, follows = 0, title = "Unknown", slug = "Unknown", songs = [] } = data;
+  const {
+    image,
+    follows = 0,
+    title = "Unknown",
+    slug = "Unknown",
+    songs = [],
+  } = data;
 
   // Tooltip content based on type
   const tooltipContent =
-    type === "album" ? `${songs.length} songs` : type === "song" ? "Single song" : "";
+    type === "album"
+      ? `${songs.length} songs`
+      : type === "song"
+      ? "Single song"
+      : "";
 
-    const content = (
-      <div className="card-container">
-        <div className="card-box">
-          <img
-            src={image || "https://placehold.jp/159x170.png"}
-            alt={title}
-            loading="lazy"
-          />
-          <Chip id="chip" label={`${follows} follows`} />
-        </div>
-        <div id="slug">{slug}</div>
+  const content = (
+    <div className="card-container">
+      <div className="card-box">
+        <img
+          src={image || "https://placehold.jp/159x170.png"}
+          alt={title}
+          loading="lazy"
+        />
+        <Chip id="chip" label={`${follows} follows`} />
       </div>
-    );
+      <div id="slug">{slug}</div>
+    </div>
+  );
 
-  return (
-    type === "album" ? (
-      <Tooltip title={tooltipContent} placement="top" arrow>
-        {content}
-      </Tooltip>
-    ) : (
+  return type === "album" ? (
+    <Tooltip title={tooltipContent} placement="top" arrow>
       {content}
-    )
+    </Tooltip>
+  ) : (
+    { content }
   );
 }
 
