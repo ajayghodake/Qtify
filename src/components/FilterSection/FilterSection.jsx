@@ -29,34 +29,32 @@ return (
   
       <BasicTabs handleChangeIndex={handleIndexChange} />
   
-      {/* Conditional rendering of grid-layout or carousel */}
-   
-        {isExpanded ? (
-          <div className="wrapper grid-layout">
-            {filteredData?.map((song, index) => (
-              <AreaCard data={song} type={type} key={song.id || index} />
-            ))}
-          </div>
-        ) : (
+        {!toggle ? (
           <CustomCarousel
-            data={filteredData}
-            renderCardItem={(item) => (
-              <AreaCard data={item} type={type} />
-            )}
-          />
+          data={filteredData}
+          renderCardItem={(item) => (
+            <AreaCard data={item} type={type} />
+          )}
+        />
+        ) : (
+          (isExpanded ? (
+            <div className="wrapper grid-layout">
+              {filteredData?.map((song, index) => (
+                <AreaCard data={song} type={type} key={song.id || index} />
+              ))}
+            </div>
+          ) : (
+            <CustomCarousel
+              data={filteredData}
+              renderCardItem={(item) => (
+                <AreaCard data={item} type={type}/>
+              )}
+            />
+          ))
         )}
+        
  
     </div>
   );
 };
 
-// {filteredData && filteredData.length ? (
-//     <CustomCarousel
-//     data={data}
-//     renderCardItem={(album, index) => (
-//       <AreaCard data={album} type={type} key={album.id || index} />
-//     )}
-//   />
-//    ): (
-//     <CircularProgress />
-//    )}

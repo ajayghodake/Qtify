@@ -22,7 +22,7 @@ export default function AreaCard({ data, type }) {
     }
 
     case "song": {
-      const { id, image, likes, title, songs } = data;
+      const { id, image, likes, title } = data;
       return (
           <div key={id} className="card-container">
             <div className="card-box">

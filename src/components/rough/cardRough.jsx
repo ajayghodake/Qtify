@@ -1,90 +1,90 @@
-import React from "react";
-import styles from "./Card.module.css";
-import { Chip, Tooltip } from "@mui/material";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from "./api/api";
+import Section from "./components/Section/Section";
+import { FilteredSection } from "./components/FilterSection/FilterSection";
+import BasicTabs from "./components/BasicTabs/BasicTabs";
+import { useEffect, useState } from "react";
 
-function Card({ data, type }) {
-  switch (type) {
-    case "album": {
-      const { image, follows, title, songs } = data;
-      return (
-        // "?." operator will give null if the value before ?. is undefined
-        <Tooltip title={`${songs?.length} songs`} placement="top" arrow>
-          <div className={styles.wrapper}>
-            <div className={styles.card}>
-              <img src={image} alt="album" />
-              <div className={styles.banner}>
-                <Chip
-                  label={`${follows} Follows`}
-                  className={styles.chip}
-                  size="small"
-                />
-              </div>
-            </div>
-            <div className={styles.titleWrapper}>
-              <p>{title}</p>
-            </div>
-          </div>
-        </Tooltip>
-      );
+function App() {
+  const [topAlbumSongs, setTopAlbumSongs] = useState([]);
+  const [newAlbumSongs, setNewAlbumSongs] = useState([]); // Corrected Here: Typo in variable name
+  const [songsData, setSongsData] = useState([]);
+  const [value, setValue] = useState(0);
+  const [filteredData, setFilteredData] = useState([]);
+
+  const generateTopAlbumSongs = async () => {
+    try {
+      const res = await fetchTopAlbums();
+      setTopAlbumSongs(res);
+    } catch (error) {
+      console.error("Error fetching top albums:", error); // Corrected Here: More descriptive error message
     }
+  };
 
-    case "song": {
-      const { image, likes, title, songs } = data;
-      return (
-        // no tooltip required here according to figma provided
-        <div className={styles.wrapper}>
-          <div className={styles.card}>
-            <img src={image} alt="album" loading="lazy" />
-            <div className={styles.banner}>
-              <div className={styles.pill}>
-                <p>{likes} Likes</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles.titleWrapper}>
-            <p>{title}</p>
-          </div>
-        </div>
-      );
+  const generateNewAlbumSongs = async () => {
+    try {
+      const res = await fetchNewAlbums();
+      setNewAlbumSongs(res); // Corrected Here: Updated variable name
+    } catch (error) {
+      console.error("Error fetching new albums:", error); // Corrected Here: More descriptive error message
     }
+  };
 
-    default:
-      return <></>;
-  }
+  const generateSongs = async () => {
+    try {
+      const res = await fetchSongs();
+      setSongsData(res);
+      setFilteredData(res);
+    } catch (error) {
+      console.error("Error fetching songs:", error); // Corrected Here: More descriptive error message
+    }
+  };
+
+  const generateNewSongs = (index) => {
+    let key = "";
+    if (index === 1) key = "rock";
+    else if (index === 2) key = "pop";
+    else if (index === 3) key = "jazz";
+    else if (index === 4) key = "blues";
+
+    if (index === 0) {
+      setFilteredData(songsData); // Corrected Here: Simplified logic for "All Songs"
+    } else {
+      const newFilteredSongs = songsData.filter((song) => song.genre.key === key);
+      setFilteredData(newFilteredSongs);
+    }
+  };
+
+  const handleIndexChange = (newValue) => {
+    setValue(newValue);
+    generateNewSongs(newValue);
+  };
+
+  useEffect(() => {
+    generateTopAlbumSongs();
+    generateNewAlbumSongs();
+    generateSongs();
+  }, []);
+
+  return (
+    <div className="App">
+      <Navbar />
+      <Hero />
+      <div className="component-wrapper">
+        <Section type="album" title="Top Albums" data={topAlbumSongs} />
+        <Section type="album" title="New Albums" data={newAlbumSongs} /> {/* Corrected Here: Updated variable */}
+      </div>
+      <FilteredSection
+        type="song"
+        title="Songs"
+        value={value}
+        filteredData={filteredData}
+        handleIndexChange={handleIndexChange}
+      />
+    </div>
+  );
 }
 
-export default Card;
-
-/*
-sample data recieved: a data is representing one album ->
-
-{
-id: "111a44fc-db51-4c0e-9dc8-486ae6fab50b",
-title: "Reasonable Stretch",
-description: "Tenetur maiores quibusdam amet quae minus nihil enim minima.",
-follows: 9687,
-image: "https://images.pexels.com/photos/4571219/pexels-photo-4571219.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-slug: "reasonable-stretch",
-songs: [
-  {      
-      id: "cfad0b8e-6d16-4349-8b39-3f075bedd4a6",
-      title: "Nothing Compares 2 U",
-      artists: [
-      "Morris Blick",
-      "Fred Upton"
-      ],
-      genre: {
-      key: "pop",
-      label: "Pop"
-      },
-      likes: 98731,
-      image: "https://images.pexels.com/photos/8155/pexels-photo.jpg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-      durationInMs: 58097
-  },
-  {},
-  {},
-  {}, etc,
- ]
-}
-
-*/
+export default App;
