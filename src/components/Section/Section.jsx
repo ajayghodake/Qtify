@@ -22,7 +22,7 @@ export default function Section({ type, title, data = [], handleIndexChange, tog
         <h3>{title}</h3>
         {toggle && (
           <button className="toggle-button" onClick={toggleExpanded}>
-            {isExpanded ? "Collapse" : "Show All"}
+            {isExpanded ? "Collapse" : "Show all"}
           </button>
         )}
       </div>
