@@ -51,18 +51,18 @@
 .card-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: self-start;
+  justify-content: space-between; /* Corrected here: spaces out content inside the card */
+  align-items: center; /* Corrected here: centers content horizontally */
+  height: 100%; /* Ensures the container takes full height */
 }
 
 .wrapper.grid-layout {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(150px, 1fr)
-  ); /* Responsive grid */
-  gap: 45px;
-  margin: 0px 30px 0px 0px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 40px; /* Reduced gap between cards for better alignment */
+  margin: 20px 30px 0px 10px;
+  justify-items: center; /* Centers items horizontally */
+  align-items: stretch; /* Makes sure all cards are of equal height */
 }
 
 .card-container:hover {
@@ -70,15 +70,16 @@
 }
 
 .card-box {
+  cursor: pointer;
   background-color: white;
   border-radius: 10px;
   width: 159px;
-  height: 205px;
-  /* box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5);  */
+  height: 205px; /* Corrected here: consistent height for all cards */
+  display: flex; /* Corrected here: ensures flexbox layout */
+  flex-direction: column;
+  justify-content: space-between; /* Corrected here: evenly spaces content inside the card */
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
-  z-index: -1;
-  cursor: pointer;
 }
 
 .card-box:hover {
@@ -87,7 +88,7 @@
 }
 
 .card-box img {
-  width: 159px;
+  width: 100%;
   height: 170px;
   object-fit: cover;
 }
@@ -103,14 +104,14 @@
 }
 
 #slug {
-  width: 170px;
+  width: 100%; /* Corrected here: ensures slug takes full width */
   padding: 0.25rem 0;
   color: white;
   font-family: Poppins;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
-  text-align: left;
+  text-align: center; /* Corrected here: centers the text */
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
@@ -145,14 +146,14 @@
   }
 
   #slug {
-    display: flex;
-    justify-content: center;
+    width: 100%; /* Corrected here: ensures slug takes full width */
+    padding: 0.25rem 0;
     color: white;
     font-family: Poppins;
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
-    text-align: left;
+    text-align: center; /* Corrected here: centers the text */
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
   }
@@ -172,17 +173,17 @@
 
 @media (max-width: 364px) {
   #slug {
-    display: flex;
-    justify-content: flex-start;
-    color: white;
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    width: 200px;
+
+    width: 100%; /* Corrected here: ensures slug takes full width */
+  padding: 0.25rem 0;
+  color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: center; /* Corrected here: centers the text */
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
   }
 }
 @media (max-width: 367px) {
@@ -248,3 +249,21 @@
 .custom-right-arrow {
   right: 10px;
 }
+
+.card-container .slug, .card-container .title {
+  margin: 0;
+  text-align: center;
+}
+
+
+.react-multi-carousel-list {
+  display: flex;
+      align-items: center;
+      overflow: hidden;
+}
+
+
+
+
+
+
