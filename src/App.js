@@ -67,6 +67,7 @@ function App() {
     }
     if (index === 0) {
       setFilteredData(songsData);
+      generateSongs();
     } else {}
     let newFilteredSongs = songsData.filter((song) => {
       console.log("key: ", key);
