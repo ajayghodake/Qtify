@@ -6,8 +6,9 @@ import CustomCarousel from "../Carousel/carousel.jsx";
 import "./Section.css";
 import noDataImage from "./nodata.png";
 import { CircularProgress } from "@mui/material";
+import '../../App.css';
 
-export default function Section({ type, title, data = [], handleIndexChange, toggle = true }) {
+export default function Section({ type, title, value, data = [], handleIndexChange, toggle = true }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -22,7 +23,7 @@ export default function Section({ type, title, data = [], handleIndexChange, tog
         <h3>{title}</h3>
         {toggle && (
           <button className="toggle-button" onClick={toggleExpanded}>
-            {isExpanded ? "Collapse" : "Show all"}
+            {isExpanded ? (<p style={{ color: "var(--green-color)" }}>Collapse</p>) : (<p style={{ color: "var(--green-color)" }}>Show all</p>)}
           </button>
         )}
       </div>

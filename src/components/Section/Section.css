@@ -28,3 +28,7 @@
     width: 124px;
     object-fit: cover;
   }
+
+  .toggle-button p {
+    color: var(--green-color);
+  }

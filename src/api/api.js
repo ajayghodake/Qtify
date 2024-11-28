@@ -12,7 +12,7 @@ async function Api(endpoint = "") {
 }
 export default Api;
 
-export const fetchTopAlbums = async () => {
+export const getTopAlbums = async () => {
   try {
     const res = await axios.get(`${BACKEND_ENPOINT}/albums/top`);
     return res.data;
@@ -22,7 +22,7 @@ export const fetchTopAlbums = async () => {
   }
 };
 
-export const fetchNewAlbums = async () => {
+export const getNewAlbums = async () => {
   try {
     const res = await axios.get(`${BACKEND_ENPOINT}/albums/new`);
     return res.data;
