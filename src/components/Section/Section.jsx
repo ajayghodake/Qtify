@@ -73,7 +73,7 @@ export default function Section({
       )} */}
 
       {loading ? (
-        <div className="loading-container">
+        <div className="loading">
           <CircularProgress />
         </div>
       ) : data.length === 0 ? (
@@ -106,7 +106,7 @@ export default function Section({
         </>
       )}
 
-      
+
     </>
   );
 }
