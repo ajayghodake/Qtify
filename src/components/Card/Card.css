@@ -195,6 +195,25 @@
     /* overflow: hidden; */
     transition: transform 0.2s ease-in-out;
   }
+
+  .carousel-container .react-multiple-carousel__arrow {
+    /* background-color: var(--green-color); */
+    color: #ffffff; /* Arrow icon color */
+    width: 30px; /* Arrow width */
+    height: 30px; /* Arrow height */
+    border-radius: 50%; /* Make arrows circular */
+    z-index: 10; /* Ensure arrows are above other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth hover effects */
+    transform: scale(0.7);
+  }
+  
+  .carousel-container .react-multiple-carousel__arrow:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: scale(0.8);
+  }
 }
 
 
@@ -203,7 +222,7 @@
   transform: translate3d(10px, 0px, 0px);
 }
 .carousel-container .react-multiple-carousel__arrow {
-  background-color: var(--green-color); /* Background color of arrows */
+  background-color: var(--green-color);
   color: #ffffff; /* Arrow icon color */
   width: 30px; /* Arrow width */
   height: 30px; /* Arrow height */
@@ -213,11 +232,12 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth hover effects */
+  transform: scale(0.7);
 }
 
 .carousel-container .react-multiple-carousel__arrow:hover {
   background-color: var(--lightGreen-color);
-  transform: scale(1.1);
+  transform: scale(0.8);
 }
 
 .react-multiple-carousel__arrow--left {

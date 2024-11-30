@@ -121,28 +121,38 @@ function App() {
   //to store the finally filtered songs
   const [filteredData, setFilteredData] = useState([]);
 
+  // Loading State
+  const [loading, setLoading] = useState(true);
+
   //function to get top/new Album/Songs we will be using function from API file also
   const generateTopAlbumSongs = async () => {
+    setLoading(true);
     try {
       const res = await getTopAlbums();
       setTopAlbumSongs(res);
     } catch (error) {
       console.log(error);
       return null;
+    } finally {
+      setLoading(false);
     }
   };
 
   const generateNewAlbumSongs = async () => {
+    setLoading(true);
     try {
       const res = await getNewAlbums();
       setNewAlbumSongs(res);
     } catch (error) {
       console.log(error);
       return null;
+    } finally {
+      setLoading(false);
     }
   };
 
   const generateSongs = async () => {
+    setLoading(true);
     try {
       console.log("generateSongs");
       const res = await fetchSongs();
@@ -150,6 +160,8 @@ function App() {
       setFilteredData(res);
     } catch (error) {
       return null;
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -199,8 +211,8 @@ function App() {
       <Navbar />
       <Hero />
       <div className="component-wrapper">
-        <Section type="album" title="Top Albums" data={topAlbumSongs} />
-        <Section type="album" title="New Albums" data={newAlbumSongs} />
+        <Section type="album" title="Top Albums" data={topAlbumSongs} loading={loading}/>
+        <Section type="album" title="New Albums" data={newAlbumSongs} loading={loading}/>
       </div>
       <div className="component-wrapper">
         <Section
@@ -208,6 +220,7 @@ function App() {
           title="Songs"
           value={value}
           data={filteredData}
+          loading={loading}
           handleIndexChange={handleIndexChange}
           toggle={false}
         />
