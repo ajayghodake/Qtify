@@ -18,7 +18,7 @@ export default function Section({ type, title, value, data = [], handleIndexChan
   console.log("Data Length:", data?.length || 0);
 
   return (
-    <div className="container">
+    <>
       <div className="header">
         <h3>{title}</h3>
         {toggle && (
@@ -59,7 +59,7 @@ export default function Section({ type, title, value, data = [], handleIndexChan
           />
         </>
       )}
-    </div>
+    </>
   );
 }
 

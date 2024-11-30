@@ -24,6 +24,7 @@ export default function BasicTabs({ handleChangeIndex}) {
   };
 
   const tabStyle = {
+    color: 'white',
     fontSize: '14px',  // Font size for the tab label
     padding: '10px 10px',  // Padding inside the tab
     margin: '0 0px',  // Margin between tabs
@@ -32,7 +33,7 @@ export default function BasicTabs({ handleChangeIndex}) {
 
 // All rock pop jazz blues
   return (
-    <Box sx={{ width: '100%', marginBottom: '30px'}}>
+    <Box sx={{ width: '100%', marginBottom: '30px', marginLeft: '30px'}}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs" 
          TabIndicatorProps={{

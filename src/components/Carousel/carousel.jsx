@@ -15,7 +15,7 @@ const CustomCarousel = ({
   arrows = true,
 }) => {
   return (
-    <div className="slide" style={{ margin: "20px 0px 0px 0px" }}>
+    <div className="slide" style={{ margin: "10px 0px 20px 0px" }}>
       <Carousel
         responsive={
           responsiveConfig || {
