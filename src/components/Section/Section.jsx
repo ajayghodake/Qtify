@@ -74,7 +74,7 @@ export default function Section({
 
       {loading ? (
         <div className="loading">
-          <CircularProgress />
+          <CircularProgress sx={{ color: "white" }}/>
         </div>
       ) : data.length === 0 ? (
         <div className="noData">
