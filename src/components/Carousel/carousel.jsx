@@ -1,110 +1,110 @@
-// // Carousel.jsx
-// import React from "react";
-// import Carousel from "react-multi-carousel";
-// import "react-multi-carousel/lib/styles.css";
+// Carousel.jsx
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-// const CustomCarousel = ({
-//   data,
-//   renderCardItem,
-//   responsiveConfig,
-//   infinite = false,
-//   showDots = false,
-//   customTransition = "all 0.5s ease-in-out",
-//   containerClass = "carousel-container",
-//   itemClass = "carousel-item-padding",
-//   arrows = true,
-// }) => {
-//   return (
-//     <div className="slide" style={{ margin: "10px 0px 20px 0px" }}>
-//       <Carousel
-//         responsive={
-//           responsiveConfig || {
-//             superLargeDesktop: {
-//               breakpoint: { max: 4000, min: 3000 },
-//               items: 10,
-//             },
-//             desktop: { breakpoint: { max: 3000, min: 1024 }, items: 7 },
-//             tablet: { breakpoint: { max: 1024, min: 464 }, items: 4 },
-//             mobile: { breakpoint: { max: 464, min: 0 }, items: 2 },
-//           }
-//         }
-//         showDots={showDots}
-//         customTransition={customTransition}
-//         infinite={infinite}
-//         containerClass={containerClass}
-//         itemClass={itemClass}
-//         arrows={arrows}
-//         style={{ margin: "0 15px", padding: "10px" }}
-//       >
-//         {data?.map((item, index) => (
-//           <div key={item.id || `item-${index}`}>
-//             {renderCardItem(item, index)}
-//           </div>
-//         ))}
-//       </Carousel>
-//     </div>
-//   );
-// };
-
-// export default CustomCarousel;
-
-
-
-import React, { useEffect } from 'react';
-// Import Swiper React components and hooks
-import { Swiper, SwiperSlide } from 'swiper/react';
-import CarouselLeft from './CarouselLeft/CarouselLeft';
-import CarouselRight from './CarouselRight/CarouselRight';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import styles from "./Carousel.module.css";
-
-
-// Import Navigation module
-import { Navigation } from 'swiper/modules';
-
-const Carousel = ({ data, renderCardItem }) => {
+const CustomCarousel = ({
+  data,
+  renderCardItem,
+  responsiveConfig,
+  infinite = false,
+  showDots = false,
+  customTransition = "all 0.5s ease-in-out",
+  containerClass = "carousel-container",
+  itemClass = "carousel-item-padding",
+  arrows = true,
+}) => {
   return (
-    <div className= "slide">
-      <Swiper
-        initialSlide={0}
-        spaceBetween={20}
-        slidesPerView={"auto"}
-        modules={[Navigation]} // Enable Navigation module
-        navigation={{
-          prevEl: '.swiper-button-prev', // Custom left button
-          nextEl: '.swiper-button-next', // Custom right button
-        }}
-        allowTouchMove
-        breakpoints={{
-          1024: { // Desktop
-            slidesPerView: 7, // Show 7 cards
-          },
-          768: { // Tablet
-            slidesPerView: 4, // Show 4 cards
-          },
-          480: { // Mobile
-            slidesPerView: 2, // Show 2 cards
-          },
-        }}
+    <div className="slide" style={{ margin: "10px 0px 20px 0px" }}>
+      <Carousel
+        responsive={
+          responsiveConfig || {
+            superLargeDesktop: {
+              breakpoint: { max: 4000, min: 3000 },
+              items: 10,
+            },
+            desktop: { breakpoint: { max: 3000, min: 1024 }, items: 7 },
+            tablet: { breakpoint: { max: 1024, min: 464 }, items: 4 },
+            mobile: { breakpoint: { max: 464, min: 0 }, items: 2 },
+          }
+        }
+        showDots={showDots}
+        customTransition={customTransition}
+        infinite={infinite}
+        containerClass={containerClass}
+        itemClass={itemClass}
+        arrows={arrows}
+        style={{ margin: "0 15px", padding: "10px" }}
       >
-        {/* Left and Right Navigation */}
-        <CarouselLeft />
-        <CarouselRight />
-
-        
-        {data.map((item, index) => (
-          <SwiperSlide key={index}>{renderCardItem(item)}</SwiperSlide>
+        {data?.map((item, index) => (
+          <div key={item.id || `item-${index}`}>
+            {renderCardItem(item, index)}
+          </div>
         ))}
-
-      </Swiper>
+      </Carousel>
     </div>
   );
-}
+};
 
-export default Carousel;
+export default CustomCarousel;
+
+
+
+// import React, { useEffect } from 'react';
+// // Import Swiper React components and hooks
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import CarouselLeft from './CarouselLeft/CarouselLeft';
+// import CarouselRight from './CarouselRight/CarouselRight';
+
+// // Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import styles from "./Carousel.module.css";
+
+
+// // Import Navigation module
+// import { Navigation } from 'swiper/modules';
+
+// const Carousel = ({ data, renderCardItem }) => {
+//   return (
+//     <div className= "slide">
+//       <Swiper
+//         initialSlide={0}
+//         spaceBetween={20}
+//         slidesPerView={"auto"}
+//         modules={[Navigation]} // Enable Navigation module
+//         navigation={{
+//           prevEl: '.swiper-button-prev', // Custom left button
+//           nextEl: '.swiper-button-next', // Custom right button
+//         }}
+//         allowTouchMove
+//         breakpoints={{
+//           1024: { // Desktop
+//             slidesPerView: 7, // Show 7 cards
+//           },
+//           768: { // Tablet
+//             slidesPerView: 4, // Show 4 cards
+//           },
+//           480: { // Mobile
+//             slidesPerView: 2, // Show 2 cards
+//           },
+//         }}
+//       >
+//         {/* Left and Right Navigation */}
+//         <CarouselLeft />
+//         <CarouselRight />
+
+        
+//         {data.map((item, index) => (
+//           <SwiperSlide key={index}>{renderCardItem(item)}</SwiperSlide>
+//         ))}
+
+//       </Swiper>
+//     </div>
+//   );
+// }
+
+// export default Carousel;
 
 
 
