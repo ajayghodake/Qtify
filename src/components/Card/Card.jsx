@@ -15,7 +15,7 @@ export default function AreaCard({ data, type }) {
               <img src={image || "https://placehold.jp/159x170.png"} alt={title || "Album"} loading="lazy"/>
               <Chip id="chip" label={`${follows || 0} follows`} />
             </div>
-            <p id="slug">{title}</p>
+            <p id="slug">{slug}</p>
           </div>
         </Tooltip>
       );
@@ -29,7 +29,7 @@ export default function AreaCard({ data, type }) {
             <img src={image || "https://placehold.jp/159x170.png"} alt={title || "Album"} loading="lazy"/>
               <Chip id="chip" label={`${likes || 0} likes`} />
             </div>
-            <p id="slug">{title || "Unknown"}</p>
+            <p id="slug">{title}</p>
           </div>
       );
     }
