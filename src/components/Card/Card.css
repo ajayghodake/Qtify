@@ -48,7 +48,7 @@
 .wrapper {
   margin: 0px 0px;
 }
-.card-container {
+.card-container{
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Corrected here: spaces out content inside the card */
