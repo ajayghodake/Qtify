@@ -40,7 +40,7 @@ export default function Section({
         )} */}
 
         <h4 onClick={toggleExpanded} className="toggle-button">
-          {toggle ? isExpanded ? "Show All" : "Collapse All" : <></>}
+          {toggle ? isExpanded ? "Show all" : "Collapse" : <></>}
         </h4>
       </div>
 
@@ -88,7 +88,7 @@ export default function Section({
           No Data Available
         </div>
       ) : type === "album" ? (
-        isExpanded ? (
+        !isExpanded ? (
           <div className="wrapper grid-layout">
             {data.map((album, index) => (
               <AreaCard data={album} type={type} key={album.id || index} />
