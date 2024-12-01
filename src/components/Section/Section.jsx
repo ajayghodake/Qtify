@@ -29,7 +29,7 @@ export default function Section({
     <>
       <div className="header">
         <h3>{title}</h3>
-        {toggle && (
+        {/* {toggle && (
           <button className="toggle-button" onClick={toggleExpanded}>
             {isExpanded ? (
               <p style={{ color: "var(--green-color)" }}>Collapse</p>
@@ -37,9 +37,15 @@ export default function Section({
               <p style={{ color: "var(--green-color)" }}>Show all</p>
             )}
           </button>
-        )}
+        )} */}
+
+        <h4 onClick={toggleExpanded} className="toggle-button">
+          {toggle ? isExpanded ? "Show All" : "Collapse All" : <></>}
+        </h4>
       </div>
 
+
+{/* Logic without Loading */}
       {/* {type === "album" ? (
         data.length === 0 ? (
           <div className="noData">
@@ -74,7 +80,7 @@ export default function Section({
 
       {loading ? (
         <div className="loading">
-          <CircularProgress sx={{ color: "white" }}/>
+          <CircularProgress sx={{ color: "white" }} />
         </div>
       ) : data.length === 0 ? (
         <div className="noData">
@@ -105,8 +111,6 @@ export default function Section({
           />
         </>
       )}
-
-
     </>
   );
 }
